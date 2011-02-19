@@ -28,3 +28,11 @@ Step 4: Add an accessory button on the right of the Picker to open the first URL
 Step 5: When adding a record (a bling), save a message (Bling on "date") in the Notes field.
 
 Step 6: Also add a URL (http://paypal.com) to the list of URLs for this person.
+
+
+DEMO 3
+======
+
+Step 7: Add UI Framework. Show a PersonViewController when selecting a row.
+
+

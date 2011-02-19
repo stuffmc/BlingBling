@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 #import "PickerViewController.h"
 
 @interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
@@ -22,7 +23,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
-@property (nonatomic, retain) NSArray *people;
+@property (nonatomic, retain) NSMutableArray *people;
 @property (nonatomic, retain) IBOutlet PickerViewController *pickerViewController;
 
 - (IBAction)openURL;

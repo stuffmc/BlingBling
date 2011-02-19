@@ -20,6 +20,7 @@
 		4CD4AA55130FE4E10086CAFE /* BlingBling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4AA53130FE4E10086CAFE /* BlingBling.xcdatamodeld */; };
 		4CD4AA5A130FE53B0086CAFE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4AA59130FE53B0086CAFE /* Icon.png */; };
 		4CD4AA81130FEA850086CAFE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4AA80130FEA850086CAFE /* AddressBook.framework */; };
+		4CD4AB5513101F3F0086CAFE /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4AB5413101F3F0086CAFE /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4CD4AA59130FE53B0086CAFE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		4CD4AA6F130FE7860086CAFE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		4CD4AA80130FEA850086CAFE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4CD4AB5413101F3F0086CAFE /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* BlingBling-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BlingBling-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
 				4CD4AA81130FEA850086CAFE /* AddressBook.framework in Frameworks */,
+				4CD4AB5513101F3F0086CAFE /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +94,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4CD4AA80130FEA850086CAFE /* AddressBook.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -120,6 +122,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CD4AA80130FEA850086CAFE /* AddressBook.framework */,
+				4CD4AB5413101F3F0086CAFE /* AddressBookUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -238,6 +242,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -252,6 +257,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Release;

@@ -32,6 +32,7 @@
 		NSString *url = [(NSString *)ABMultiValueCopyValueAtIndex(urls, 0) autorelease];
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)url]];
 	}
+	CFRelease(urls);
 }
 
 #pragma mark -
@@ -48,7 +49,10 @@
     [addButton release];
 	
 	ab = ABAddressBookCreate();
-	people_ = (NSArray*)ABAddressBookCopyPeopleWithName(ab, (CFStringRef)@"Manuel");
+	people_ = (NSMutableArray*)ABAddressBookCopyPeopleWithName(ab, (CFStringRef)@"Manuel");
+//	[people_ sortUsingFunction:(int(*)(id, id, void *))ABPersonComparePeopleByName context:(void*)ABPersonGetSortOrdering()];		
+	
+
 	self.pickerViewController.people = people_;
 }
 
@@ -112,12 +116,14 @@
 	ABRecordSetValue(record, kABPersonNoteProperty, [NSString stringWithFormat:@"Bling Bing on %@", [NSDate date]], NULL); // OF COURSE I should deal with the Error in a real world app!
 	
 	ABMultiValueRef urls = ABRecordCopyValue(record, kABPersonURLProperty);
-	ABMutableMultiValueRef urlCopy = ABMultiValueCreateMutableCopy(urls); 
+	ABMutableMultiValueRef urlCopy = ABMultiValueCreateMutableCopy(urls);
+	CFRelease(urls);
 	ABMultiValueAddValueAndLabel(urlCopy, (CFStringRef)@"http://paypal.com", (CFStringRef)@"pay-me", NULL); 
 	ABRecordSetValue(record, kABPersonURLProperty, urlCopy, NULL);
+	CFRelease(urlCopy);
 	
 	ABAddressBookSave(ab, NULL);
-    [newManagedObject setValue:(NSString*)ABRecordCopyCompositeName(record) forKey:@"name"];
+    [newManagedObject setValue:[(NSString*)ABRecordCopyCompositeName(record) autorelease] forKey:@"name"];
     [newManagedObject setValue:[NSNumber numberWithInteger:ABRecordGetRecordID(record)] forKey:@"recordID"];
     
     // Save the context.
@@ -215,10 +221,21 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here -- for example, create and push another view controller.
+	NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+	NSNumber *recordID = [selectedObject valueForKey:@"recordID"];
+	if (recordID) {
+		ABRecordRef record = ABAddressBookGetPersonWithRecordID(ab, [recordID integerValue]);
+		if (record) {
+			ABPersonViewController *personViewController = [[ABPersonViewController alloc] init];
+			personViewController.addressBook = ab;
+			personViewController.displayedPerson = record;
+			personViewController.allowsEditing = YES;
+			[[self navigationController] pushViewController:personViewController animated:YES];
+			[personViewController release];
+		}
+	}
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
