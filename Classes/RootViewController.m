@@ -19,6 +19,21 @@
 @synthesize fetchedResultsController=fetchedResultsController_, managedObjectContext=managedObjectContext_, people=people_, pickerViewController=pickerViewController_;
 
 
+- (ABRecordRef)selectedRecord {
+	NSUInteger row = [self.pickerViewController.pickerView selectedRowInComponent:0];
+	return [people_ objectAtIndex:row];
+}
+
+- (IBAction)openURL {
+	// Get the contact selected in the picker and display it's URL
+	ABRecordRef record = [self selectedRecord];
+	ABMultiValueRef urls = ABRecordCopyValue(record, kABPersonURLProperty);
+	if (ABMultiValueGetCount(urls)) {
+		NSString *url = [(NSString *)ABMultiValueCopyValueAtIndex(urls, 0) autorelease];
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)url]];
+	}
+}
+
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -93,8 +108,7 @@
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
 	
 	// Get the contact selected in the picker
-	NSUInteger row = [self.pickerViewController.pickerView selectedRowInComponent:0];
-	ABRecordRef record = [people_ objectAtIndex:row];
+	ABRecordRef record = [self selectedRecord];
     [newManagedObject setValue:(NSString*)ABRecordCopyCompositeName(record) forKey:@"name"];
     [newManagedObject setValue:[NSNumber numberWithInteger:ABRecordGetRecordID(record)] forKey:@"recordID"];
     
@@ -110,7 +124,6 @@
         abort();
     }
 }
-
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 

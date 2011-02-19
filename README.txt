@@ -1,5 +1,8 @@
 This is a sample code I use to demonstrate (in a more detailled way) how one can use the AddressBook API for iOS.
 
+DEMO 1
+======
+
 Step 1: 
 
 - Starting from "Navigation Based Core Data Backed App" Xcode template
@@ -16,3 +19,8 @@ Step 2:
 
 Step 3: Get the selected Contact (ABRecord) in the Picker, save his name & recordID in Core Data
 
+
+DEMO 2
+======
+
+Step 4: Add an accessory button on the right of the Picker to open the first URL associated with a contact.

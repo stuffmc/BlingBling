@@ -25,4 +25,6 @@
 @property (nonatomic, retain) NSArray *people;
 @property (nonatomic, retain) IBOutlet PickerViewController *pickerViewController;
 
+- (IBAction)openURL;
+
 @end
