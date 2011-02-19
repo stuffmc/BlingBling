@@ -24,3 +24,7 @@ DEMO 2
 ======
 
 Step 4: Add an accessory button on the right of the Picker to open the first URL associated with a contact.
+
+Step 5: When adding a record (a bling), save a message (Bling on "date") in the Notes field.
+
+Step 6: Also add a URL (http://paypal.com) to the list of URLs for this person.

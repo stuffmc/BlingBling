@@ -109,6 +109,14 @@
 	
 	// Get the contact selected in the picker
 	ABRecordRef record = [self selectedRecord];
+	ABRecordSetValue(record, kABPersonNoteProperty, [NSString stringWithFormat:@"Bling Bing on %@", [NSDate date]], NULL); // OF COURSE I should deal with the Error in a real world app!
+	
+	ABMultiValueRef urls = ABRecordCopyValue(record, kABPersonURLProperty);
+	ABMutableMultiValueRef urlCopy = ABMultiValueCreateMutableCopy(urls); 
+	ABMultiValueAddValueAndLabel(urlCopy, (CFStringRef)@"http://paypal.com", (CFStringRef)@"pay-me", NULL); 
+	ABRecordSetValue(record, kABPersonURLProperty, urlCopy, NULL);
+	
+	ABAddressBookSave(ab, NULL);
     [newManagedObject setValue:(NSString*)ABRecordCopyCompositeName(record) forKey:@"name"];
     [newManagedObject setValue:[NSNumber numberWithInteger:ABRecordGetRecordID(record)] forKey:@"recordID"];
     
