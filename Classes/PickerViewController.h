@@ -13,6 +13,7 @@
 
 }
 
+@property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) NSArray *people;
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation PickerViewController
 
-@synthesize people=people_;
+@synthesize people=people_, pickerView=pickerView_;
 
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

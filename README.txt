@@ -14,3 +14,5 @@ Step 2:
 - @property NSArray for ABAddressBookCopyPeopleWithName (in RootVC)
 - use this array for the Picker and display the name
 
+Step 3: Get the selected Contact (ABRecord) in the Picker, save his name & recordID in Core Data
+

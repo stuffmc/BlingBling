@@ -91,6 +91,12 @@
     
     // If appropriate, configure the new managed object.
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+	
+	// Get the contact selected in the picker
+	NSUInteger row = [self.pickerViewController.pickerView selectedRowInComponent:0];
+	ABRecordRef record = [people_ objectAtIndex:row];
+    [newManagedObject setValue:(NSString*)ABRecordCopyCompositeName(record) forKey:@"name"];
+    [newManagedObject setValue:[NSNumber numberWithInteger:ABRecordGetRecordID(record)] forKey:@"recordID"];
     
     // Save the context.
     NSError *error = nil;
