@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AddressBook/AddressBook.h>
 
 @interface PickerViewController : UIViewController <UIPickerViewDelegate> {
 
 }
+
+@property (nonatomic, retain) NSArray *people;
 
 @end

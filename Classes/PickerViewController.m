@@ -11,6 +11,9 @@
 
 @implementation PickerViewController
 
+@synthesize people=people_;
+
+
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -69,11 +72,12 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-	return 1;
+	return [people_ count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	return @"Contacts";
+	ABRecordRef record = [people_ objectAtIndex:row];
+	return [NSString stringWithFormat:@"%@", ABRecordCopyCompositeName(record)];
 }
 
 

@@ -19,6 +19,7 @@
 		4CD4AA30130FE1180086CAFE /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4AA2F130FE1180086CAFE /* PickerViewController.m */; };
 		4CD4AA55130FE4E10086CAFE /* BlingBling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4AA53130FE4E10086CAFE /* BlingBling.xcdatamodeld */; };
 		4CD4AA5A130FE53B0086CAFE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4AA59130FE53B0086CAFE /* Icon.png */; };
+		4CD4AA81130FEA850086CAFE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD4AA80130FEA850086CAFE /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		4CD4AA2F130FE1180086CAFE /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		4CD4AA54130FE4E10086CAFE /* InstantPayDemo.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = InstantPayDemo.xcdatamodel; sourceTree = "<group>"; };
 		4CD4AA59130FE53B0086CAFE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		4CD4AA6F130FE7860086CAFE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		4CD4AA80130FEA850086CAFE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* BlingBling-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BlingBling-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +54,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
+				4CD4AA81130FEA850086CAFE /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +85,13 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4CD4AA6F130FE7860086CAFE /* README.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				4CD4AA80130FEA850086CAFE /* AddressBook.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

@@ -16,7 +16,7 @@
 
 @implementation RootViewController
 
-@synthesize fetchedResultsController=fetchedResultsController_, managedObjectContext=managedObjectContext_;
+@synthesize fetchedResultsController=fetchedResultsController_, managedObjectContext=managedObjectContext_, people=people_, pickerViewController=pickerViewController_;
 
 
 #pragma mark -
@@ -31,6 +31,10 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
+	
+	ab = ABAddressBookCreate();
+	people_ = (NSArray*)ABAddressBookCopyPeopleWithName(ab, (CFStringRef)@"Manuel");
+	self.pickerViewController.people = people_;
 }
 
 
