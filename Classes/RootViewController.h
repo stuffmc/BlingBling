@@ -12,7 +12,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import "PickerViewController.h"
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate, ABNewPersonViewControllerDelegate> {
+@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, UIActionSheetDelegate> {
 
 @private
     NSFetchedResultsController *fetchedResultsController_;

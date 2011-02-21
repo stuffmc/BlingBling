@@ -24,7 +24,7 @@
 	return [people_ objectAtIndex:row];
 }
 
-- (IBAction)addNewPerson {
+- (void)addNewPersonFromScratch {
 	ABNewPersonViewController *newPersonViewController = [[ABNewPersonViewController alloc] init];
 	newPersonViewController.addressBook = ab;
 	newPersonViewController.newPersonViewDelegate = self;
@@ -32,6 +32,24 @@
 	[newPersonViewController release];
 	[[self navigationController] presentModalViewController:newPersonNavigationController animated:YES];
 	[newPersonNavigationController release];
+}
+
+- (IBAction)addNewPerson {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Add new person" destructiveButtonTitle:nil otherButtonTitles:@"Add from Address Book", nil];
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//	NSLog(@"%d", buttonIndex);
+	if (buttonIndex) {
+		[self addNewPersonFromScratch];
+	} else {
+		ABPeoplePickerNavigationController *ppnc = [[ABPeoplePickerNavigationController alloc] init];
+		ppnc.peoplePickerDelegate = self;
+		[self.navigationController presentModalViewController:ppnc animated:YES];
+		[ppnc release];
+	}
 }
 
 #pragma mark -
@@ -388,6 +406,22 @@
 	[self loadPeople];
 	[self.pickerViewController.pickerView reloadComponent:0];
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+	[people_ addObject:(void*)person];
+	self.pickerViewController.people = people_;
+	[self.pickerViewController.pickerView reloadComponent:0];
+	[self dismissModalViewControllerAnimated:YES];
+	return NO;
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+	return NO;
 }
 
 

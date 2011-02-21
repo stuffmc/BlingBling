@@ -40,3 +40,7 @@ DEMO 4
 
 Step 8: When clicking on the "+" button in the PickerView, use a newPersonViewController to add a person and refresh the list
 
+DEMO 5
+======
+
+Step 9: Change the "+" into an ActionSheet that give the option between adding a new person or selecting from the address book, and thus show the PeoplePicker and when selecting a person, add it to the PickerView.
