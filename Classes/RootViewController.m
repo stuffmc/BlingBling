@@ -24,19 +24,24 @@
 	return [people_ objectAtIndex:row];
 }
 
-- (IBAction)openURL {
-	// Get the contact selected in the picker and display it's URL
-	ABRecordRef record = [self selectedRecord];
-	ABMultiValueRef urls = ABRecordCopyValue(record, kABPersonURLProperty);
-	if (ABMultiValueGetCount(urls)) {
-		NSString *url = [(NSString *)ABMultiValueCopyValueAtIndex(urls, 0) autorelease];
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)url]];
-	}
-	CFRelease(urls);
+- (IBAction)addNewPerson {
+	ABNewPersonViewController *newPersonViewController = [[ABNewPersonViewController alloc] init];
+	newPersonViewController.addressBook = ab;
+	newPersonViewController.newPersonViewDelegate = self;
+	UINavigationController *newPersonNavigationController = [[UINavigationController alloc] initWithRootViewController:newPersonViewController];
+	[newPersonViewController release];
+	[[self navigationController] presentModalViewController:newPersonNavigationController animated:YES];
+	[newPersonNavigationController release];
 }
 
 #pragma mark -
 #pragma mark View lifecycle
+
+- (void)loadPeople {
+	people_ = (NSMutableArray*)ABAddressBookCopyPeopleWithName(ab, (CFStringRef)@"Manuel");
+		//	[people_ sortUsingFunction:(int(*)(id, id, void *))ABPersonComparePeopleByName context:(void*)ABPersonGetSortOrdering()];		
+	self.pickerViewController.people = people_;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,12 +54,9 @@
     [addButton release];
 	
 	ab = ABAddressBookCreate();
-	people_ = (NSMutableArray*)ABAddressBookCopyPeopleWithName(ab, (CFStringRef)@"Manuel");
-//	[people_ sortUsingFunction:(int(*)(id, id, void *))ABPersonComparePeopleByName context:(void*)ABPersonGetSortOrdering()];		
-	
-
-	self.pickerViewController.people = people_;
+	[self loadPeople];
 }
+
 
 
 // Implement viewWillAppear: to do additional setup before the view is presented.
@@ -94,6 +96,7 @@
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:[managedObject valueForKey:@"timeStamp"]], [managedObject valueForKey:@"name"]];
+	cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 	[dateFormatter release];
 }
 
@@ -243,6 +246,21 @@
      */
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+	NSNumber *recordID = [selectedObject valueForKey:@"recordID"];
+	if (recordID) {
+		ABRecordRef record = ABAddressBookGetPersonWithRecordID(ab, [recordID integerValue]);
+		if (record) {
+			ABMultiValueRef urls = ABRecordCopyValue(record, kABPersonURLProperty);
+			if (ABMultiValueGetCount(urls)) {
+				NSString *url = [(NSString *)ABMultiValueCopyValueAtIndex(urls, 0) autorelease];
+				[[UIApplication sharedApplication] openURL:[NSURL URLWithString:(NSString*)url]];
+			}
+			CFRelease(urls);
+		}
+	}
+}
 
 #pragma mark -
 #pragma mark Fetched results controller
@@ -362,6 +380,16 @@
     [self.tableView reloadData];
 }
  */
+
+#pragma mark -
+#pragma mark AddressBook UI Delegates
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonView didCompleteWithNewPerson:(ABRecordRef)person {
+	[self loadPeople];
+	[self.pickerViewController.pickerView reloadComponent:0];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 
 #pragma mark -

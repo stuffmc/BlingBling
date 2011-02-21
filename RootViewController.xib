@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
 		<string key="IBDocument.SystemVersion">10J567</string>
-		<string key="IBDocument.InterfaceBuilderVersion">851</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">141</string>
+			<string key="NS.object.0">132</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -42,24 +42,24 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIView" id="19947670">
+					<object class="IBUIView" id="563376684">
 						<reference key="NSNextResponder" ref="709618507"/>
 						<int key="NSvFlags">292</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIPickerView" id="897383722">
-								<reference key="NSNextResponder" ref="19947670"/>
+								<reference key="NSNextResponder" ref="563376684"/>
 								<int key="NSvFlags">290</int>
 								<string key="NSFrameSize">{320, 216}</string>
-								<reference key="NSSuperview" ref="19947670"/>
+								<reference key="NSSuperview" ref="563376684"/>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIShowsSelectionIndicator">YES</bool>
 							</object>
-							<object class="IBUIButton" id="740364424">
-								<reference key="NSNextResponder" ref="19947670"/>
+							<object class="IBUIButton" id="358813633">
+								<reference key="NSNextResponder" ref="563376684"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{274, 92}, {29, 31}}</string>
-								<reference key="NSSuperview" ref="19947670"/>
+								<string key="NSFrame">{{274, 94}, {29, 29}}</string>
+								<reference key="NSSuperview" ref="563376684"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -69,8 +69,8 @@
 									<double key="NSSize">15</double>
 									<int key="NSfFlags">16</int>
 								</object>
-								<int key="IBUIButtonType">2</int>
-								<object class="NSColor" key="IBUIHighlightedTitleColor" id="828407494">
+								<int key="IBUIButtonType">5</int>
+								<object class="NSColor" key="IBUIHighlightedTitleColor" id="535173734">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
@@ -86,13 +86,13 @@
 						</object>
 						<string key="NSFrameSize">{320, 216}</string>
 						<reference key="NSSuperview" ref="709618507"/>
-						<reference key="IBUIBackgroundColor" ref="828407494"/>
+						<reference key="IBUIBackgroundColor" ref="535173734"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 420}</string>
 				<reference key="NSSuperview"/>
-				<reference key="IBUIBackgroundColor" ref="828407494"/>
+				<reference key="IBUIBackgroundColor" ref="535173734"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -107,7 +107,7 @@
 				<float key="IBUIRowHeight">44</float>
 				<float key="IBUISectionHeaderHeight">22</float>
 				<float key="IBUISectionFooterHeight">22</float>
-				<reference key="IBUITableHeaderView" ref="19947670"/>
+				<reference key="IBUITableHeaderView" ref="563376684"/>
 			</object>
 			<object class="IBUICustomObject" id="581458204">
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -174,12 +174,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">openURL</string>
-						<reference key="source" ref="740364424"/>
+						<string key="label">addNewPerson</string>
+						<reference key="source" ref="358813633"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">19</int>
+					<int key="connectionID">21</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -207,7 +207,7 @@
 						<reference key="object" ref="709618507"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="19947670"/>
+							<reference ref="563376684"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -218,23 +218,23 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="19947670"/>
+						<reference key="object" ref="563376684"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="897383722"/>
-							<reference ref="740364424"/>
+							<reference ref="358813633"/>
 						</object>
 						<reference key="parent" ref="709618507"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
 						<reference key="object" ref="897383722"/>
-						<reference key="parent" ref="19947670"/>
+						<reference key="parent" ref="563376684"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">17</int>
-						<reference key="object" ref="740364424"/>
-						<reference key="parent" ref="19947670"/>
+						<int key="objectID">20</int>
+						<reference key="object" ref="358813633"/>
+						<reference key="parent" ref="563376684"/>
 					</object>
 				</object>
 			</object>
@@ -248,10 +248,10 @@
 					<string>10.IBViewBoundsToFrameTransform</string>
 					<string>16.IBPluginDependency</string>
 					<string>16.IBViewBoundsToFrameTransform</string>
-					<string>17.IBPluginDependency</string>
-					<string>17.IBViewBoundsToFrameTransform</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
+					<string>20.IBPluginDependency</string>
+					<string>20.IBViewBoundsToFrameTransform</string>
 					<string>7.CustomClassName</string>
 					<string>7.IBPluginDependency</string>
 				</object>
@@ -267,12 +267,12 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">AQAAAABDYgAAA</bytes>
 					</object>
+					<string>{{488, 551}, {320, 420}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABDcwAAwvIAAA</bytes>
 					</object>
-					<string>{{655, 543}, {320, 420}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>PickerViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -293,7 +293,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -321,13 +321,13 @@
 					<string key="className">RootViewController</string>
 					<string key="superclassName">UITableViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">openURL</string>
+						<string key="NS.key.0">addNewPerson</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">openURL</string>
+						<string key="NS.key.0">addNewPerson</string>
 						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">openURL</string>
+							<string key="name">addNewPerson</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
@@ -583,6 +583,6 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">BlingBling.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">141</string>
+		<string key="IBCocoaTouchPluginVersion">132</string>
 	</data>
 </archive>

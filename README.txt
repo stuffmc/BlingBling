@@ -35,4 +35,8 @@ DEMO 3
 
 Step 7: Add UI Framework. Show a PersonViewController when selecting a row.
 
+DEMO 4
+======
+
+Step 8: When clicking on the "+" button in the PickerView, use a newPersonViewController to add a person and refresh the list
 

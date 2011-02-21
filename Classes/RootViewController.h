@@ -12,7 +12,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import "PickerViewController.h"
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate, ABNewPersonViewControllerDelegate> {
 
 @private
     NSFetchedResultsController *fetchedResultsController_;
@@ -26,6 +26,6 @@
 @property (nonatomic, retain) NSMutableArray *people;
 @property (nonatomic, retain) IBOutlet PickerViewController *pickerViewController;
 
-- (IBAction)openURL;
+- (IBAction)addNewPerson;
 
 @end
