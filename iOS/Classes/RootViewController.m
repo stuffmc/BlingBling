@@ -61,6 +61,10 @@
 	self.pickerViewController.people = people_;
 }
 
+void myFunctionPointer () {
+	NSLog(@"ADDRESS BOOK HAS CHANGED!");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -73,8 +77,9 @@
 	
 	ab = ABAddressBookCreate();
 	[self loadPeople];
+	
+	ABAddressBookRegisterExternalChangeCallback(ab, myFunctionPointer, NULL);
 }
-
 
 
 // Implement viewWillAppear: to do additional setup before the view is presented.

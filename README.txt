@@ -44,3 +44,8 @@ DEMO 5
 ======
 
 Step 9: Change the "+" into an ActionSheet that give the option between adding a new person or selecting from the address book, and thus show the PeoplePicker and when selecting a person, add it to the PickerView.
+
+DEMO 6
+======
+
+Step 10: Refresh the PickerView when a new record is added on the Address Book while the app is open!
