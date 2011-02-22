@@ -11,17 +11,28 @@
 
 @implementation WindowController
 
-@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_, emailLabel=emailLabel_, webView=webView_;
+@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_, emailLabel=emailLabel_, webView=webView_, panel=panel_, peoplePickerView=peoplePickerView_;
 
 - (void)loadPeople {
 	ABGroup *group = [[ab_ groups] lastObject];
 	people_ = [[group members] mutableCopy];
 }
 
+- (IBAction)pickPerson:(id)sender {
+	[panel_ orderFrontRegardless];
+}
+
+- (IBAction)addPerson:(id)sender {
+	[people_ addObjectsFromArray:[[self peoplePickerView] selectedRecords]];
+	[contactsComboBox_ reloadData];
+}
+
+
 - (void)awakeFromNib {
 	NSLog(@"%s", _cmd);
 	ab_ = [ABAddressBook sharedAddressBook];
 	[self loadPeople];
+	[peoplePickerView_ setNameDoubleAction:@selector(addPerson:)];
 	NSString *contactCount = [NSString stringWithFormat:@"%d Contacts", [people_ count]];
 	[_contactsCountLabel setStringValue:contactCount];
 	NSLog(@"%@", contactCount);

@@ -45,23 +45,21 @@ Step 10: Refresh the PickerView when a new record is added on the Address Book w
 
 DEMO MAC 1
 ==========
-
 Step 1: Do a Core Data Based Mac App based on the same Core Data and add an "Entity" in IB, to show in a NSTableView + show the number of total contacts (NSLog)
-
 Step 2: Select the "last" group, and it's members, and display the count in a label in the UI (before the search box)
-
 Step 3: Add a NSComboBox with the list of members of this group.
-
 Step 4: When adding a new record, auto add the date and when selecting from the combobox, update the record.
 
 DEMO MAC 2
 ==========
-
 Step 5: When selecting a row, show the person's email and website on the right (with a Label and a WebView)
 
 DEMO MAC 3
 ==========
-
 Step 6: When a Notification of update is posted, refresh the combobox
+
+DEMO MAC 4
+==========
+Step 7: When clicking on "+" show a PeoplePicker and when double clicking on a name, add it to the comboBox.
 
 
