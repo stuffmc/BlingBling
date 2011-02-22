@@ -15,4 +15,6 @@
 @property (retain) ABAddressBook *ab;
 @property (retain) NSMutableArray *people;
 
+@property (retain) IBOutlet NSTextField *contactsCountLabel;
+
 @end

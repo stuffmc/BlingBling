@@ -11,6 +11,7 @@
 		4CFC2FB4131326EC001515D0 /* BlingBling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC2FB2131326EC001515D0 /* BlingBling.xcdatamodeld */; };
 		4CFC2FF913132830001515D0 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC2FF813132830001515D0 /* WindowController.m */; };
 		4CFC302C131328E9001515D0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFC302B131328E9001515D0 /* AddressBook.framework */; };
+		4CFC306D1313D44B001515D0 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC306C1313D44B001515D0 /* Icon.icns */; };
 		77C8280E06725ACE000B614F /* BlingBling_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* BlingBling_AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -29,6 +30,7 @@
 		4CFC2FF713132830001515D0 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		4CFC2FF813132830001515D0 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		4CFC302B131328E9001515D0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4CFC306C1313D44B001515D0 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* BlingBling_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlingBling_AppDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* BlingBling_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlingBling_AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC306C1313D44B001515D0 /* Icon.icns */,
 				8D1107310486CEB800E47090 /* BlingBling-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				2F7446970DB6B7EA00F9684A /* MainMenu.xib */,
@@ -188,6 +191,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */,
+				4CFC306D1313D44B001515D0 /* Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

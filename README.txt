@@ -48,3 +48,5 @@ DEMO MAC 1
 
 Step 1: Do a Core Data Based Mac App based on the same Core Data and add an "Entity" in IB, to show in a NSTableView + show the number of total contacts (NSLog)
 
+Step 2: Select the "last" group, and it's members, and display the count in a label in the UI (before the search box)
+

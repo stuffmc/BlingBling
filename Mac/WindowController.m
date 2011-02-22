@@ -11,13 +11,16 @@
 
 @implementation WindowController
 
-@synthesize ab=ab_, people=people_;
+@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel;
 
 - (void)awakeFromNib {
 	NSLog(@"%s", _cmd);
 	ab_ = [ABAddressBook sharedAddressBook];
-	people_ = [[ab_ people] mutableCopy];
-	NSLog(@"%d Contacts", [people_ count]);
+	ABGroup *group = [[ab_ groups] lastObject];
+	people_ = [[group members] mutableCopy];
+	NSString *contactCount = [NSString stringWithFormat:@"%d Contacts", [people_ count]];
+	[_contactsCountLabel setStringValue:contactCount];
+	NSLog(@"%@", contactCount);
 }
 
 @end
