@@ -11,7 +11,7 @@
 
 @implementation WindowController
 
-@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel;
+@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_;
 
 - (void)awakeFromNib {
 	NSLog(@"%s", _cmd);
@@ -21,6 +21,20 @@
 	NSString *contactCount = [NSString stringWithFormat:@"%d Contacts", [people_ count]];
 	[_contactsCountLabel setStringValue:contactCount];
 	NSLog(@"%@", contactCount);
+	id person = [people_ lastObject];
+	NSLog(@"%@ ::: %@", [person valueForProperty:kABFirstNameProperty], person);
+}
+
+
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox {
+	return [people_ count];
+}
+
+- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index {
+	ABPerson *person = [people_ objectAtIndex:index];
+	NSString *compositeName = [NSString stringWithFormat:@"%@ %@", [person valueForProperty:kABFirstNameProperty], [person valueForProperty:kABLastNameProperty]];
+	NSLog(@"%@", compositeName);
+	return compositeName;
 }
 
 @end

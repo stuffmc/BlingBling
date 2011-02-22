@@ -50,3 +50,4 @@ Step 1: Do a Core Data Based Mac App based on the same Core Data and add an "Ent
 
 Step 2: Select the "last" group, and it's members, and display the count in a label in the UI (before the search box)
 
+Step 3: Add a NSComboBox with the list of members of this group.
