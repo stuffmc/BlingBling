@@ -12,6 +12,8 @@
 		4CFC2FF913132830001515D0 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC2FF813132830001515D0 /* WindowController.m */; };
 		4CFC302C131328E9001515D0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFC302B131328E9001515D0 /* AddressBook.framework */; };
 		4CFC306D1313D44B001515D0 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4CFC306C1313D44B001515D0 /* Icon.icns */; };
+		4CFC318913140D27001515D0 /* ArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC318813140D27001515D0 /* ArrayController.m */; };
+		4CFC31A513140EA7001515D0 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC31A413140EA7001515D0 /* Event.m */; };
 		77C8280E06725ACE000B614F /* BlingBling_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* BlingBling_AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -31,6 +33,10 @@
 		4CFC2FF813132830001515D0 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		4CFC302B131328E9001515D0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4CFC306C1313D44B001515D0 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		4CFC318713140D27001515D0 /* ArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayController.h; sourceTree = "<group>"; };
+		4CFC318813140D27001515D0 /* ArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayController.m; sourceTree = "<group>"; };
+		4CFC31A313140EA7001515D0 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		4CFC31A413140EA7001515D0 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* BlingBling_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlingBling_AppDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* BlingBling_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlingBling_AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 				4CFC2FF813132830001515D0 /* WindowController.m */,
 				77C8280B06725ACE000B614F /* BlingBling_AppDelegate.h */,
 				77C8280C06725ACE000B614F /* BlingBling_AppDelegate.m */,
+				4CFC318713140D27001515D0 /* ArrayController.h */,
+				4CFC318813140D27001515D0 /* ArrayController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -134,6 +142,8 @@
 		7756732906782D8800D1FEB8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC31A313140EA7001515D0 /* Event.h */,
+				4CFC31A413140EA7001515D0 /* Event.m */,
 				4CFC2FB2131326EC001515D0 /* BlingBling.xcdatamodeld */,
 			);
 			name = Models;
@@ -206,6 +216,8 @@
 				77C8280E06725ACE000B614F /* BlingBling_AppDelegate.m in Sources */,
 				4CFC2FB4131326EC001515D0 /* BlingBling.xcdatamodeld in Sources */,
 				4CFC2FF913132830001515D0 /* WindowController.m in Sources */,
+				4CFC318913140D27001515D0 /* ArrayController.m in Sources */,
+				4CFC31A513140EA7001515D0 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

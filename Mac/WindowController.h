@@ -9,13 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <AddressBook/AddressBook.h>
 
-@interface WindowController : NSWindowController <NSComboBoxDataSource> {
+@interface WindowController : NSWindowController <NSComboBoxDataSource, NSComboBoxDelegate, NSTableViewDelegate> {
 }
 
 @property (retain) ABAddressBook *ab;
 @property (retain) NSMutableArray *people;
 
-
+@property (retain) IBOutlet NSArrayController *arrayController;
 @property (retain) IBOutlet NSComboBox *contactsComboBox;
 
 @property (retain) IBOutlet NSTextField *contactsCountLabel;

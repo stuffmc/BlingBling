@@ -127,7 +127,7 @@
  */
  
 - (IBAction) saveAction:(id)sender {
-
+	NSLog(@"%s", _cmd);
     NSError *error = nil;
     
     if (![[self managedObjectContext] commitEditing]) {
