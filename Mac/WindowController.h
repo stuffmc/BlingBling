@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AddressBook/AddressBook.h>
+#import <WebKit/WebKit.h>
 
 @interface WindowController : NSWindowController <NSComboBoxDataSource, NSComboBoxDelegate, NSTableViewDelegate> {
 }
@@ -19,5 +20,7 @@
 @property (retain) IBOutlet NSComboBox *contactsComboBox;
 
 @property (retain) IBOutlet NSTextField *contactsCountLabel;
+@property (retain) IBOutlet NSTextField *emailLabel;
+@property (retain) IBOutlet WebView *webView;
 
 @end

@@ -30,9 +30,9 @@
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{9959, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{10010, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{10060, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 17616}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1463, 6110}}";
-			sepNavSelRange = "{16150, 0}";
-			sepNavVisRange = "{15288, 2263}";
+			sepNavIntBoundsRect = "{{0, 0}, {1463, 6045}}";
+			sepNavSelRange = "{17116, 0}";
+			sepNavVisRange = "{15288, 2261}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -80,20 +80,40 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 320022278;
-			PBXWorkspaceStateSaveDate = 320022278;
+			PBXPerProjectTemplateStateSaveDate = 320082599;
+			PBXWorkspaceStateSaveDate = 320082599;
 		};
 		perUserProjectItems = {
+			4C6241AA131418C500815100 /* PBXTextBookmark */ = 4C6241AA131418C500815100 /* PBXTextBookmark */;
+			4C6241B91314190000815100 /* PBXTextBookmark */ = 4C6241B91314190000815100 /* PBXTextBookmark */;
 			4C685A1A13131C6A00BE8F25 /* PBXTextBookmark */ = 4C685A1A13131C6A00BE8F25 /* PBXTextBookmark */;
 			4CD4AA5E130FE53E0086CAFE /* PBXTextBookmark */ = 4CD4AA5E130FE53E0086CAFE /* PBXTextBookmark */;
 			4CD4AA5F130FE53E0086CAFE /* PBXTextBookmark */ = 4CD4AA5F130FE53E0086CAFE /* PBXTextBookmark */;
 			4CD4AAE5130FF8E70086CAFE /* PBXTextBookmark */ = 4CD4AAE5130FF8E70086CAFE /* PBXTextBookmark */;
-			4CFC2FC613132708001515D0 /* PBXTextBookmark */ = 4CFC2FC613132708001515D0 /* PBXTextBookmark */;
-			4CFC2FDA1313278C001515D0 /* PBXTextBookmark */ = 4CFC2FDA1313278C001515D0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4CD4AA06130FDE2C0086CAFE /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	4C6241AA131418C500815100 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 438";
+		rLen = 0;
+		rLoc = 17173;
+		rType = 0;
+		vrLen = 2263;
+		vrLoc = 15345;
+	};
+	4C6241B91314190000815100 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 423";
+		rLen = 0;
+		rLoc = 16741;
+		rType = 0;
+		vrLen = 1667;
+		vrLoc = 15822;
 	};
 	4C6859E0131315E600BE8F25 /* RootViewController.m:279 */ = {
 		isa = PBXFileBreakpoint;
@@ -108,7 +128,7 @@
 		ignoreCount = 0;
 		lineNumber = 279;
 		location = BlingBling;
-		modificationTime = 320022298.554414;
+		modificationTime = 320022298.5544139;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -344,25 +364,5 @@
 		modificationTime = 320022298.555355;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
-	};
-	4CFC2FC613132708001515D0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		name = "RootViewController.m: 421";
-		rLen = 0;
-		rLoc = 16648;
-		rType = 0;
-		vrLen = 2263;
-		vrLoc = 15345;
-	};
-	4CFC2FDA1313278C001515D0 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		name = "RootViewController.m: 416";
-		rLen = 0;
-		rLoc = 16356;
-		rType = 0;
-		vrLen = 1685;
-		vrLoc = 15822;
 	};
 }

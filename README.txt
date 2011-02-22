@@ -53,3 +53,15 @@ Step 2: Select the "last" group, and it's members, and display the count in a la
 Step 3: Add a NSComboBox with the list of members of this group.
 
 Step 4: When adding a new record, auto add the date and when selecting from the combobox, update the record.
+
+DEMO MAC 2
+==========
+
+Step 5: When selecting a row, show the person's email and website on the right (with a Label and a WebView)
+
+DEMO MAC 3
+==========
+
+Step 6: When a Notification of update is posted, refresh the combobox
+
+

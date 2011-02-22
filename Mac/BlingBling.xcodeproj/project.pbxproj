@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
+		4C6241D513141A7000815100 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6241D413141A7000815100 /* WebKit.framework */; };
 		4CFC2FB4131326EC001515D0 /* BlingBling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC2FB2131326EC001515D0 /* BlingBling.xcdatamodeld */; };
 		4CFC2FF913132830001515D0 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC2FF813132830001515D0 /* WindowController.m */; };
 		4CFC302C131328E9001515D0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFC302B131328E9001515D0 /* AddressBook.framework */; };
@@ -28,6 +29,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* BlingBling_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlingBling_Prefix.pch; sourceTree = "<group>"; };
+		4C6241D413141A7000815100 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		4CFC2FB3131326EC001515D0 /* InstantPayDemo.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = InstantPayDemo.xcdatamodel; sourceTree = "<group>"; };
 		4CFC2FF713132830001515D0 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		4CFC2FF813132830001515D0 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4CFC302C131328E9001515D0 /* AddressBook.framework in Frameworks */,
+				4C6241D513141A7000815100 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				4C6241D413141A7000815100 /* WebKit.framework */,
 			);
 			name = BlingBling;
 			sourceTree = "<group>";

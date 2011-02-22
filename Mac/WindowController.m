@@ -11,20 +11,31 @@
 
 @implementation WindowController
 
-@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_;
+@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_, emailLabel=emailLabel_, webView=webView_;
+
+- (void)loadPeople {
+	ABGroup *group = [[ab_ groups] lastObject];
+	people_ = [[group members] mutableCopy];
+}
 
 - (void)awakeFromNib {
 	NSLog(@"%s", _cmd);
 	ab_ = [ABAddressBook sharedAddressBook];
-	ABGroup *group = [[ab_ groups] lastObject];
-	people_ = [[group members] mutableCopy];
+	[self loadPeople];
 	NSString *contactCount = [NSString stringWithFormat:@"%d Contacts", [people_ count]];
 	[_contactsCountLabel setStringValue:contactCount];
 	NSLog(@"%@", contactCount);
 //	id person = [people_ lastObject];
 //	NSLog(@"%@ ::: %@", [person valueForProperty:kABFirstNameProperty], person);
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dbChanged:) name:kABDatabaseChangedExternallyNotification object:nil];
 }
 
+- (void)dbChanged:(NSNotification*)note {
+	NSLog(@"%s %@", _cmd, note);
+	[self loadPeople];
+	[contactsComboBox_ reloadData];
+}
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox {
 	return [people_ count];
@@ -42,7 +53,25 @@
 //}
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
 	NSManagedObject *managedObject = [[arrayController_ selectedObjects] lastObject];
-	[contactsComboBox_ setStringValue:[managedObject valueForKey:@"name"]];
+	NSString *name = [managedObject valueForKey:@"name"];
+	if (name) {
+		[[self contactsComboBox] setStringValue:name];
+	}
+	NSString *uniqueID = [managedObject valueForKey:@"uniqueID"];
+	if (uniqueID) {
+		ABRecord *record = [ab_ recordForUniqueId:uniqueID];
+		if (record) {
+			ABMultiValue *multiValueEmail = [record valueForProperty:kABEmailProperty];			
+			if ([multiValueEmail count]) {
+				[emailLabel_ setStringValue:[multiValueEmail valueAtIndex:0]];
+			}
+			ABMultiValue *multiValueURL = [record valueForProperty:kABURLsProperty];
+			if ([multiValueURL count]) {
+				id url = [multiValueURL valueAtIndex:0];
+				[webView_ setMainFrameURL:url];
+			}
+		}
+	}
 //	NSLog(@"dc: %@", managedObject);
 }
 
