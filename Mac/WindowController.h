@@ -27,6 +27,8 @@
 @property (retain) IBOutlet NSPanel *panel;
 @property (retain) IBOutlet ABPeoplePickerView *peoplePickerView;
 
+@property (retain) IBOutlet NSButton *addButton;
+
 - (IBAction)pickPerson:(id)sender;
 - (IBAction)addPerson:(id)sender;
 

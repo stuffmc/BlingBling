@@ -62,4 +62,8 @@ DEMO MAC 4
 ==========
 Step 7: When clicking on "+" show a PeoplePicker and when double clicking on a name, add it to the comboBox.
 
+DEMO PLUGIN
+==========
+Step 1: Create a plugin that will send a Distributed Notification to "BlingBling Mac" and will look for the name (based on the uniqueID sent in the Notification) in the combobox.
 
+Step 2: Show "AddressBook Purger"

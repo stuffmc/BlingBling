@@ -11,7 +11,7 @@
 
 @implementation WindowController
 
-@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_, emailLabel=emailLabel_, webView=webView_, panel=panel_, peoplePickerView=peoplePickerView_;
+@synthesize ab=ab_, people=people_, contactsCountLabel=_contactsCountLabel, contactsComboBox=contactsComboBox_, arrayController=arrayController_, emailLabel=emailLabel_, webView=webView_, panel=panel_, peoplePickerView=peoplePickerView_, addButton=addButton_;
 
 - (void)loadPeople {
 	ABGroup *group = [[ab_ groups] lastObject];
@@ -27,6 +27,21 @@
 	[contactsComboBox_ reloadData];
 }
 
+- (void)blingedFromPlugin:(NSNotification*)note {
+	NSString *uniqueID = [[note userInfo] valueForKey:@"ABPerson"];
+	ABRecord *record = [ab_ recordForUniqueId:uniqueID];
+	
+		
+	if (record) {
+		NSInteger index = [people_ indexOfObject:record];
+		if (index != NSNotFound) {
+			NSLog(@"index: %d", index);
+			[[self contactsComboBox] selectItemAtIndex:index];
+			[addButton_ performClick:nil];
+		}
+	}
+	NSLog(@"Person blinged: %@", uniqueID);
+}
 
 - (void)awakeFromNib {
 	NSLog(@"%s", _cmd);
@@ -40,6 +55,8 @@
 //	NSLog(@"%@ ::: %@", [person valueForProperty:kABFirstNameProperty], person);
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dbChanged:) name:kABDatabaseChangedExternallyNotification object:nil];
+//	[[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(blingedFromPlugin:) name:@"BlingNotification" object:nil];
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(blingedFromPlugin:) name:nil object:nil];
 }
 
 - (void)dbChanged:(NSNotification*)note {
